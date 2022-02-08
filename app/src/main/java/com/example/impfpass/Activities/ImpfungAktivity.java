@@ -2,25 +2,18 @@ package com.example.impfpass.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.service.autofill.RegexValidator;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.example.impfpass.R;
-import com.example.impfpass.dao.ImfungDAOInterface;
-import com.example.impfpass.dao.KrankheitDAOInterface;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.LinkedList;
-import java.util.regex.Pattern;
 
 public class ImpfungAktivity extends AppCompatActivity {
-    private final LinkedList<String> impflist = new LinkedList<>();
-    private ImfungDAOInterface imfungDAOInterface;
-    private KrankheitDAOInterface krankheitDAOInterface;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

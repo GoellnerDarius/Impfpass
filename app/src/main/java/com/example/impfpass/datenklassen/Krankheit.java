@@ -32,10 +32,6 @@ public class Krankheit {
         return gueltigkeit;
     }
 
-    public void setGueltigkeit(int gueltigkeit) {
-        this.gueltigkeit = gueltigkeit;
-    }
-
     public int getKrankheitID() {
         return krankheitID;
     }

@@ -10,5 +10,43 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="action_settings">Einstellungen</string>
+    <string name="impfungs_name">Impfungs Name:</string>
+    <string name="hersteller">Hersteller:</string>
+    <string name="datum">Datum:</string>
+    <string name="krankheits_name">Krankheits Name:</string>
+    <string name="impfung_hinzufuegen">Impfung Hinzufügen</string>
+    <string name="hinzufuegen">Hinzufügen</string>
+    <string name="z_b_covid_19_v3">z.B. Covid-19 V3</string>
+    <string name="herstellerbsp">z.B. Moderna</string>
+    <string name="datumbsp">z.B. 21.01.2022</string>
+    <string name="krankheitBsp">z.B. Covid-19</string>
+    <string name="importButton">Impfungen und Krankheiten Importieren</string>
+    <string name="rbExport">Impfungen und Krankheiten Exportieren</string>
+    <string name="ordnerpfad">Ordnerpfad</string>
+    <string name="pfad_auswahl">Pfad auswählen</string>
+    <string name="export">exportiren/importieen</string>
+    <string name="nochmal">nochmal</string>
+    <string name="impfname">Name der Impfung</string>
+    <string name="hersteller_impfung">Hersteller</string>
+    <string name="schutz">schutz</string>
+    <string name="n_chste_impfung">Nächste Impfung</string>
+    <string name="impfdatum">impfdatum</string>
+    <string name="hersteller_view">hersteller</string>
+    <string name="name">name</string>
+    <string name="wirkt_gegen">Wirkt gegen</string>
+    <string name="datum_der_impfung">Datum der Impfung</string>
+    <string name="empfehlug">Empfehlug:</string>
+    <string name="empfolen">empfolen</string>
+    <string name="hinzufuegen_creation">Hinzufügen</string>
+    <string name="hinzufuegen_text">Was wilst du hinzufügen</string>
+    <string name="hinzufuegen_krankheit">Krankheit hinzufügen</string>
+    <string name="hinzufuegen_Impfung">Impfung hinzufügen</string>
+    <string name="krankheitsname">Krankheitsname</string>
+    <string name="impfabstand">Impfabstand</string>
+    <string name="krankheit_hinzuf_gen">Krankheit Hinzufügen</string>
+    <string name="krankheit_hinzufgen_add">Krankheit hinzufügen</string>
+    <string name="z_b_covid_19">z.B. Covid-19</string>
+    <string name="wochenBsp">z.B. 3 Wochen</string>
 
 </resources>

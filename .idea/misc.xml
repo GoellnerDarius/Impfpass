@@ -5,14 +5,14 @@
       <map>
         <entry key="..\:/Users/Darius/AndroidStudioProjects/Impfpass/app/src/main/res/drawable/ic_launcher_background.xml" value="0.22395833333333334" />
         <entry key="..\:/Users/Darius/AndroidStudioProjects/Impfpass/app/src/main/res/layout/activity_chose_creation.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Darius/AndroidStudioProjects/Impfpass/app/src/main/res/layout/activity_main.xml" value="0.2078125" />
+        <entry key="..\:/Users/Darius/AndroidStudioProjects/Impfpass/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/Darius/AndroidStudioProjects/Impfpass/app/src/main/res/layout/activity_popup.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Darius/AndroidStudioProjects/Impfpass/app/src/main/res/layout/activity_select_creation.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/Darius/AndroidStudioProjects/Impfpass/app/src/main/res/layout/add_impfung.xml" value="0.2078125" />
         <entry key="..\:/Users/Darius/AndroidStudioProjects/Impfpass/app/src/main/res/layout/add_impfung_content.xml" value="0.4782608695652174" />
         <entry key="..\:/Users/Darius/AndroidStudioProjects/Impfpass/app/src/main/res/layout/add_krankheit.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Darius/AndroidStudioProjects/Impfpass/app/src/main/res/layout/add_krankheit_content.xml" value="0.2078125" />
-        <entry key="..\:/Users/Darius/AndroidStudioProjects/Impfpass/app/src/main/res/layout/content_main.xml" value="0.2" />
+        <entry key="..\:/Users/Darius/AndroidStudioProjects/Impfpass/app/src/main/res/layout/add_krankheit_content.xml" value="0.67" />
+        <entry key="..\:/Users/Darius/AndroidStudioProjects/Impfpass/app/src/main/res/layout/content_main.xml" value="0.25" />
         <entry key="..\:/Users/Darius/AndroidStudioProjects/Impfpass/app/src/main/res/layout/content_select_creation.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Darius/AndroidStudioProjects/Impfpass/app/src/main/res/layout/creationscreen.xml" value="0.2078125" />
         <entry key="..\:/Users/Darius/AndroidStudioProjects/Impfpass/app/src/main/res/layout/creationscreen_content.xml" value="0.33" />
@@ -22,7 +22,10 @@
         <entry key="..\:/Users/Darius/AndroidStudioProjects/Impfpass/app/src/main/res/layout/impfung_screen.xml" value="0.33" />
         <entry key="..\:/Users/Darius/AndroidStudioProjects/Impfpass/app/src/main/res/layout/krankheits_bildschirm.xml" value="0.2078125" />
         <entry key="..\:/Users/Darius/AndroidStudioProjects/Impfpass/app/src/main/res/layout/popup.xml" value="0.5" />
+        <entry key="..\:/Users/Darius/AndroidStudioProjects/Impfpass/app/src/main/res/layout/settings_activity.xml" value="0.2078125" />
+        <entry key="..\:/Users/Darius/AndroidStudioProjects/Impfpass/app/src/main/res/layout/settings_content.xml" value="0.5" />
         <entry key="..\:/Users/Darius/AndroidStudioProjects/Impfpass/app/src/main/res/layout/wordlist_item.xml" value="0.5" />
+        <entry key="..\:/Users/Darius/AndroidStudioProjects/Impfpass/app/src/main/res/menu/menu_main.xml" value="0.2351851851851852" />
       </map>
     </option>
   </component>

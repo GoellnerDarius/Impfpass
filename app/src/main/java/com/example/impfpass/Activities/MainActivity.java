@@ -7,11 +7,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.impfpass.CSVRW;
 import com.example.impfpass.R;
 import com.example.impfpass.dao.AppDatabase;
 import com.example.impfpass.dao.ImfungDAOInterface;
@@ -29,11 +30,9 @@ public class MainActivity extends AppCompatActivity {
     private ImfungDAOInterface impfungen;
     private KrankheitDAOInterface krankheiten;
     //RecyclerView
-    private final LinkedList<String> impflist = new LinkedList<>();
-    private RecyclerView iRecyclerView;
-    private ListAdapter iAdapter;
-    private static List<Impfung> impfungs;
-
+    private final static LinkedList<String> impflist = new LinkedList<>();
+    private static RecyclerView iRecyclerView;
+    private static ListAdapter iAdapter;
     public static final String EXTRA_MESSAGE
             = "com.example.android.impfpass.extra.MESSAGE";
 
@@ -41,20 +40,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //  FloatingActionButton fab = findViewById(R.id.fab);
-        /*fab.setOnClickListener(view -> {
-         //   getPath();
-            showPopup();
 
-            //                int wordListSize = mWordList.size();
-//                // Add a new word to the wordList.
-//                mWordList.addLast("+ Word " + wordListSize);
-//                // Notify the adapter, that the data has changed.
-//                mRecyclerView.getAdapter().notifyItemInserted(wordListSize);
-//                // Scroll to the bottom.
-//                mRecyclerView.smoothScrollToPosition(wordListSize);
-        });
-*/
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setBackgroundColor(getColor(R.color.purple_500));
+        setSupportActionBar(toolbar);
 
         //Datenbank und DAO Interfaces anlegen
         db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "ImpfpassDaten").allowMainThreadQueries().fallbackToDestructiveMigration()
@@ -62,10 +51,9 @@ public class MainActivity extends AppCompatActivity {
         impfungen = db.impfungDAO();
         krankheiten = db.krankheitDAO();
 
-      //  createDatabase();
+      // createDatabase();
         //Daten aus der Datenbank holen
         List impfung = impfungen.selectAll();
-        List krankheit = krankheiten.selectAll();
 
 
         //Elemente zur Recyclerview hinzufügen
@@ -73,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
             impflist.addLast(((Impfung) impfung.get(i)).getImpfungsName() + "\t\t\t\t" + ((Impfung) impfung.get(i)).getDatum());
             System.out.println(impflist.get(i));
         }
-
 
         // Create recycler view.
         iRecyclerView = findViewById(R.id.recyclerview);
@@ -87,31 +74,38 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void getPath(View view) {
-        Intent i = new Intent(Intent.ACTION_OPEN_DOCUMENT_TREE);
-        i.addCategory(Intent.CATEGORY_DEFAULT);
-        startActivityForResult(Intent.createChooser(i, "Choose directory"), 9999);
+    public void update(View view){
+        impflist.addLast("TTTTTTTTTTTTTTTTT");
+        iRecyclerView.setAdapter(iAdapter);
     }
-
+    public static void update2(String s){
+        impflist.addLast(s);
+        iRecyclerView.setAdapter(iAdapter);
+    }
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        switch (requestCode) {
-            case 9999:
-                Log.i("Test", "Result URI " + data.getData());
-                Log.i("Test", "Result path " + data.getData().getPath());
-                Log.i("Test", "Result string" + data.getData().toString());
-                final String[] split = data.getData().toString().split(":");//split the path.
-                System.out.println("************************************************************************************");
-                System.out.println(split[0]);
-                System.out.println(split[1]);
-                new CSVRW(krankheiten, impfungen, data.getData().getPath()).writeCSV();
-                break;
-        }
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar
+        // if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
     }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
 
+        // If option menu item is Settings, return true.
+        if (id == R.id.action_settings) {
+            Intent intent = new Intent(this,
+                    Settings.class);
+            startActivity(intent);
+            return true;
+        }
 
+        return super.onOptionsItemSelected(item);
+    }
     public void launchErstellung(View view) {
         Intent intent = new Intent(this, ChoseCreation.class);
         // String message = mMessageEditText.getText().toString();
@@ -133,6 +127,12 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        System.out.printf("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+
+    }
 
     private void createDatabase() {
         //Zum anlegen von Testdaten
@@ -151,6 +151,7 @@ public class MainActivity extends AppCompatActivity {
         krankheiten.insert(new Krankheit("Covid", 20));
         //Impfungen
         impfungen.deleteByName("FSME Imun");
+        impfungen.deleteByName("android.support.v7.widget.AppCompatEditText{910e2a9 VFED..CL. ........ 66,332-646,456 #7f08008b app:id/impfName aid=1073741824}");
         impfungen.deleteByName("Polio");
         impfungen.deleteByName("Difteri");
         impfungen.deleteByName("Tetanus");
@@ -165,28 +166,6 @@ public class MainActivity extends AppCompatActivity {
         impfungen.insert(new Impfung("Covid-19", "Biontec/Pfizer", "2022.01.22", krankheiten.selectIDWhereName("Covid")));
     }
 
-    public ImfungDAOInterface getImpfungen() {
-        return impfungen;
-    }
 
-    public void setImpfungen(ImfungDAOInterface impfungen) {
-        this.impfungen = impfungen;
-    }
 
-    public KrankheitDAOInterface getKrankheiten() {
-        return krankheiten;
-    }
-
-    public void setKrankheiten(KrankheitDAOInterface krankheiten) {
-        this.krankheiten = krankheiten;
-    }
 }
-/*
-class Comp implements Comparator<Impfung> {
-    @Override
-    public int compare(Impfung i1, Impfung i2) {
-        return i1.getDatum().compareTo(i2.getDatum());
-
-    }
-
-}*/

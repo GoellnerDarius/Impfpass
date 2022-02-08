@@ -44,20 +44,18 @@ public class AddImpfung extends AppCompatActivity {
     public void addImpfung(View view) {
         System.out.println(krankheit.getText());
         int id = krankheiten.selectIDWhereName(krankheit.getText().toString());
-        Impfung impfung = new Impfung(name.getText().toString(), hersteller.getText().toString(), datum.getText().toString(), id);
-        System.out.println(impfung.getImpfungsName());
-        System.out.println(impfung.getHersteller());
-        System.out.println(impfung.getDatum());
-        System.out.println(impfung.getImpfID());
+
         if (id != 0) {
-            impfungen.insert(new Impfung(name.toString(), hersteller.toString(), datum.toString(), id));
+            Impfung im=new Impfung(name.getText().toString(), hersteller.getText().toString(), datum.getText().toString(), id);
+            impfungen.insert(im);
             status.setTextColor(getResources().getColor(R.color.ok));
             status.setText("Impfung erfolgreich hinzugefügt");
             name.setText("");
             hersteller.setText("");
             datum.setText("");
             krankheit.setText("");
-            status.setText("");
+            MainActivity.update2(im.getImpfungsName()+"\t\t\t"+im.getDatum());
+
         } else {
             status.setTextColor(getResources().getColor(R.color.warning));
             status.setText("Krankheit Exestiert nicht");

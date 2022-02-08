@@ -22,14 +22,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
-            android:text="Impfung hinzufügen" />
+            android:text="@string/hinzufuegen_Impfung" />
 
         <RadioButton
             android:id="@+id/rb_krankheit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
-            android:text="Krankheit hinzufügen" />
+            android:text="@string/hinzufuegen_krankheit" />
     </RadioGroup>
 
     <TextView
@@ -37,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Was wilst du hinzufügen"
+        android:text="@string/hinzufuegen_text"
         android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,7 +50,7 @@
         android:layout_marginTop="60dp"
         android:layout_marginEnd="32dp"
         android:onClick="launchCreation"
-        android:text="Hinzufügen"
+        android:text="@string/hinzufuegen_creation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 

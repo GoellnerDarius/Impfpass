@@ -1,7 +1,6 @@
 package com.example.impfpass;
 
-import android.os.Build;
-import android.support.annotation.RequiresApi;
+
 
 import com.example.impfpass.dao.ImfungDAOInterface;
 import com.example.impfpass.dao.KrankheitDAOInterface;
@@ -24,7 +23,7 @@ public class CSVRW {
     public CSVRW(KrankheitDAOInterface krankheiten, ImfungDAOInterface impfungen, String filePath) {
         this.krankheiten = krankheiten;
         this.impfungen = impfungen;
-        this.f = new File("/SDCARD/Download/test.csv");
+        this.f = new File(filePath+"out.csv");
         System.out.println(f.getPath());
 
     }
@@ -60,7 +59,6 @@ public class CSVRW {
 
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
     public void writeCSV() {
         List<Krankheit> krankheitsList=krankheiten.selectAll();
         List<Impfung> impfungsList=impfungen.selectAll();

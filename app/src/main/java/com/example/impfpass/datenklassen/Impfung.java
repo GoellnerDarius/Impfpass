@@ -16,13 +16,7 @@ public class Impfung {
    private String datum;
    @Nullable
    private String empfaehlung;
-/*
-   public Impfung(String impfungsName, String hersteller, String datum, String krankhgeitsName,KrankheitDAOInterface krankeit) {
-      this.impfungsName = impfungsName;
-      this.hersteller = hersteller;
-      this.datum = datum;
-      this.krankheitsID=krankeit.selectIDWhereName(krankhgeitsName);
-   }*/
+
    @Ignore
    public Impfung(String impfungsName, String hersteller, String datum, int krankheitsID) {
       this.impfungsName = impfungsName;

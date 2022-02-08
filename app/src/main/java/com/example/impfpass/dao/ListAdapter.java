@@ -33,17 +33,6 @@ public class ListAdapter extends
         @Override
         public void onClick(View view) {
 
-//            int mPosition = getLayoutPosition();
-//
-//            // Use that to access the affected item in mWordList.
-//            String element = mWordList.get(mPosition);
-//            // Change the word in the mWordList.
-//
-//            mWordList.set(mPosition, "Clicked! " + element);
-//            // Notify the adapter, that the data has changed so it can
-//            // update the RecyclerView to display the data.
-//            mAdapter.notifyDataSetChanged();
-
 
         }
     }

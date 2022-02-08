@@ -2,7 +2,6 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -13,7 +12,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="64dp"
 
-        android:text="Krankheitsname"
+        android:text="@string/krankheitsname"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
@@ -25,10 +24,10 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
 
-        android:text="Impfabstand"
+        android:text="@string/impfabstand"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5" />
+        app:layout_constraintTop_toBottomOf="@+id/krankheit_edit" />
 
     <TextView
         android:id="@+id/textView8"
@@ -36,7 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
 
-        android:text="Krankheit Hinzufügen"
+        android:text="@string/krankheit_hinzuf_gen"
         android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,31 +47,40 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
         android:onClick="addKrankheit"
-        android:text="Krankheit  hinzufügen"
+        android:text="@string/krankheit_hinzufgen_add"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName6" />
+        app:layout_constraintTop_toBottomOf="@+id/impfabstand" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName5"
+        android:id="@+id/krankheit_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:ems="10"
-        android:hint="z.B. Covid-19"
+        android:hint="@string/z_b_covid_19"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="@+id/textView5"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName6"
+        android:id="@+id/impfabstand"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
-        android:hint="z.B. 3 Wochen"
+        android:hint="@string/wochenBsp"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName5"
+        app:layout_constraintStart_toStartOf="@+id/krankheit_edit"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <TextView
+        android:id="@+id/krankheit_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="@+id/button2"
+        app:layout_constraintStart_toStartOf="@+id/button2" />
 </android.support.constraint.ConstraintLayout>
